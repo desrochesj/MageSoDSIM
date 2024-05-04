@@ -8,6 +8,7 @@ public class Player {
 	int spellPower;
 	double critChance;
 	double critMultiplier;
+	int hitChance;
 	
 	//Getters
 	/**
@@ -41,8 +42,15 @@ public class Player {
     /**
      * @return critMultiplier
      */
-    public double getCritMutliplier(){
+    public double getCritMultiplier(){
         return critMultiplier;
+    }
+    
+    /**
+     * @return hitChance
+     */
+    public int getHitChance(){
+        return hitChance;
     }
 	
 	//Setters
@@ -80,6 +88,13 @@ public class Player {
     public void setCritMultiplier(double critMultiplier){
         this.critMultiplier = critMultiplier;
     }
+    
+    /**
+     * @param hitChance
+     */
+    public void setHitChance(int hitChance){
+        this.hitChance = hitChance;
+    }
 	
 	//Constructors
 	/**
@@ -91,6 +106,7 @@ public class Player {
         this.spellPower = 0;
         this.critChance = 0.0;
         this.critMultiplier = 0.0;
+        this.hitChance = 0;
     }
     
     /**
@@ -101,13 +117,45 @@ public class Player {
      * @param critChance
      * @param critMultiplier
      */
-    public Player(int remainingMana, int intellect, int spellPower, double critChance, double critMultiplier) {
+    public Player(int remainingMana, int intellect, int spellPower, double critChance, double critMultiplier, int hitChance) {
     	this.remainingMana = remainingMana;
     	this.intellect = intellect;
     	this.spellPower = spellPower;
     	this.critChance = critChance;
     	this.critMultiplier = critMultiplier;
+    	this.hitChance = hitChance;
     }
     
-    public void castFrostFireBolt
+    //Generate Random Integer Between 2 Values
+    /*
+     * @param min
+     * @param max
+     * @return random value between min and max
+     */
+    public int generateRandom(int min, int max) {
+    	return (int) (Math.floor(Math.random() * (max - min + 1) ) + min);
+    }
+    
+    //Possible Spells to Cast
+    /*
+     * Frostfire Bolt
+     * @return Damage Dealt
+     */
+    public int castFrostFireBolt(){
+    	if (generateRandom(0,100) > 94 + getHitChance()) { //Spell Misses
+    		return 0;
+    	}
+    	if (generateRandom(0,100) <= getCritChance() * 100) { //Spell Crits
+    		//TODO Ignite lmao
+    		int damage = (int) ((generateRandom(513,598) + (getSpellPower() * .814)) * getCritMultiplier());
+    		System.out.println("Frostfire Bolt CRIT did: " + damage);
+    		return damage;
+    		//return (int) ((generateRandom(513,598) + (getSpellPower() * .814)) * getCritMultiplier());
+    	} else { //No Crit
+    		int damage = (int) (generateRandom(513,598) + (getSpellPower() * .814));
+    		System.out.println("Frostfire Bolt did: " + damage);
+    		return damage;
+    		//return (int) (generateRandom(513,598) + getSpellPower() * .814);
+    	}
+    }
 }

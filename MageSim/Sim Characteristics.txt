@@ -1,6 +1,7 @@
-Fight Length: 60
-Mana: 3658
-Intellect: 186
-Spell Power: 280
-Critical Strike Chance: .1212
-Critical Strike Multiplier: 3
+Fight Length:43
+Mana:3658
+Intellect:186
+Spell Power:280
+Critical Strike Chance:.273
+Critical Strike Multiplier:3
+Hit Chance:7
