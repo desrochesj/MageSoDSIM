@@ -1,4 +1,4 @@
-Fight Length:43
+Fight Length:600
 Mana:3658
 Intellect:186
 Spell Power:280
