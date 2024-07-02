@@ -9,7 +9,7 @@ These Talents
 These Runes
 ![SoDRunes](https://github.com/desrochesj/MageSoDSIM/assets/79223593/e4c21234-7fda-43a4-9753-f2ba57f87365)
 
-NYI List:
+NYI List (Probably More Stuff Too):
 1. Pyroblast Talent / Associated Things Including Rune
 2. Scorch + Scorch Vulnerability
 3. Fire Blast + Overheat
