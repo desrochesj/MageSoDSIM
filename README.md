@@ -2,6 +2,7 @@
 Mage Sim for WoW:SoD
 
 This Sim Assumes:
+
 These Talents
 ![SoDTalents](https://github.com/desrochesj/MageSoDSIM/assets/79223593/f7866efd-5acb-419a-ba10-3e3c40836072)
 
