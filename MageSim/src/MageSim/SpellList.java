@@ -84,11 +84,11 @@ public class SpellList {
     	}
     	
     	if (hasCrit) {
-    		int damage = (int) ((generateRandom(713,831) + (getSpellPower() * .814)) * getCritMultiplier());
+    		int damage = (int) ((generateRandom(565,658) + (getSpellPower() * .814)) * getCritMultiplier());
     		//System.out.println("Frostfire Bolt did: *" + damage + "*");
     		return damage;
     	} else {
-    		int damage = (int) (generateRandom(713,831) + (getSpellPower() * .814));
+    		int damage = (int) (generateRandom(565,658) + (getSpellPower() * .814));
     		//System.out.println("Frostfire Bolt did: " + damage);
     		return damage;
     	}

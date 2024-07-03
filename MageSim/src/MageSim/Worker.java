@@ -65,16 +65,14 @@ public class Worker extends Rotations{
 		}
 		
 		//Sim the Correct Rotation
-		if (profileToRun == 0) {
+		if (profileToRun == 0) { //Simple Frostfire Bolt
 			for (int i = 0; i < numIterations; i++) {
 				rotations[i] = new Rotations();
 				simOutput = rotations[i].SimpleFFB(spell,  fightDuration);
 				
-				simValues[0][i] = simOutput[0];
-				simValues[1][i] = simOutput[1];
-				simValues[2][i] = simOutput[2];
-				simValues[3][i] = simOutput[3];
-				simValues[4][i] = simOutput[4];
+				for (int j = 0; j < damageTypes; j++) {
+					simValues[j][i] = simOutput[j];
+				}
 
 				totalFFB += simValues[0][i];
 				totalBombTick += simValues[1][i];
@@ -83,16 +81,14 @@ public class Worker extends Rotations{
 				totalDamage += simValues[4][i];
 			}
 		}
-		if (profileToRun == 1) {
+		if (profileToRun == 1) { //Frostfire Bolt + Living Bomb
 			for (int i = 0; i < numIterations; i++) {
 				rotations[i] = new Rotations();
 				simOutput = rotations[i].BombAndFFB(spell,  fightDuration);
 				
-				simValues[0][i] = simOutput[0];
-				simValues[1][i] = simOutput[1];
-				simValues[2][i] = simOutput[2];
-				simValues[3][i] = simOutput[3];
-				simValues[4][i] = simOutput[4];
+				for (int j = 0; j < damageTypes; j++) {
+					simValues[j][i] = simOutput[j];
+				}
 
 				totalFFB += simValues[0][i];
 				totalBombTick += simValues[1][i];
